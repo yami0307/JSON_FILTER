@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <h1>JSON VIEWER</h1>
+
+    <input type="file" accept="application/JSON" id="file-selector" />
+    <input onclick="viewFile()" type="button" value="Submit" id="submitBtn" />
+
+    <br />
+    <br />
+    <br />
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row" id="filter_section" hidden>
+          <div class="col-md-6">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label for="inputGroupSelect01" class="input-group-text">
+                  Perceived Severity
+                </label>
+              </div>
+              <select id="select_ps" class="custom-select">
+                <option value="">Choose...</option>
+                <option value="Major">Major</option>
+                <option value="Minor">Minor</option>
+                <option value="Critical">Critical</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label for="inputGroupSelect01" class="input-group-text"
+                  >Alarm Type</label
+                >
+              </div>
+              <select id="select_at" class="custom-select">
+                <option value="">Choose...</option>
+                <option value="EQUIPMENT_ALARM">EQUIPMENT_ALARM</option>
+                <option value="ENVIRONMENTAL_ALARM">ENVIRONMENTAL ALARM</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div id="button_section" hidden>
+          <button
+            id="filter"
+            onclick="filter()"
+            class="btn btn-sm btn-outline-info"
+          >
+            Filter
+          </button>
+          <!-- <button id="reset_ps" class="btn btn-sm btn-outline-info">
+            Reset Perceived Security
+          </button>
+          <button id="reset_at" class="btn btn-sm btn-outline-info">
+            Reset Alarm Type
+          </button> -->
+          <button
+            id="reset"
+            onclick="resetFilter()"
+            class="btn btn-sm btn-outline-warning"
+          >
+            Reset
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <br />
+
+    <div id="table"></div>
+
+    <!-- Script -->
+    <script src="scripts.js"></script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
